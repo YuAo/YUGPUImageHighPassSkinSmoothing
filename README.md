@@ -2,7 +2,15 @@
 
 An implementation of High Pass Skin Smoothing using [GPUImage](https://github.com/BradLarson/GPUImage).
 
-See the core image implementation [YUCIHighPassSkinSmoothing](https://github.com/YuAo/YUCIHighPassSkinSmoothing) for detail.
+##Previews, Concepts
+
+See the `Core Image` implementation [YUCIHighPassSkinSmoothing](https://github.com/YuAo/YUCIHighPassSkinSmoothing) for detail.
+
+##Usage
+
+The API should be self-explaining.
+
+If you are not familiar with `GPUImage`, use the core image implementation.
 
 ##Installation
 
@@ -13,3 +21,4 @@ Either clone the repo and manually add the files in `Sources` directory
 or if you use Cocoapods, add the following to your Podfile
 
 	pod 'YUGPUImageHighPassSkinSmoothing'
+

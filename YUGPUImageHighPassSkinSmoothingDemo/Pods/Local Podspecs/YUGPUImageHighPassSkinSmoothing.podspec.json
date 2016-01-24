@@ -16,7 +16,8 @@
   },
   "requires_arc": true,
   "platforms": {
-    "ios": "7.0"
+    "ios": "7.0",
+    "osx": "10.10"
   },
   "source_files": "Sources/**/*.{h,m}",
   "resources": "Sources/**/*.{png,cikernel}",

@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C497400C75AD14EA08B8A74 /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4ED340CFC8C9E930AB6B612 /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework */; };
 		9DDA749F1C54E44B0027D7FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDA749E1C54E44B0027D7FA /* AppDelegate.swift */; };
 		9DDA74A11C54E44B0027D7FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDA74A01C54E44B0027D7FA /* ViewController.swift */; };
 		9DDA74A41C54E44B0027D7FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDA74A21C54E44B0027D7FA /* Main.storyboard */; };
 		9DDA74A61C54E44B0027D7FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDA74A51C54E44B0027D7FA /* Assets.xcassets */; };
 		9DDA74A91C54E44B0027D7FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDA74A71C54E44B0027D7FA /* LaunchScreen.storyboard */; };
-		AEA21041DE8872538399C5DD /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3AB97550D9C929219BFBB8 /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		24731384373DCD14452CE5C4 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YUGPUImageHighPassSkinSmoothingDemo/Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig"; sourceTree = "<group>"; };
-		9A39E6200FA8F40DC5093E42 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YUGPUImageHighPassSkinSmoothingDemo/Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		4C031F7E02FD9985F232E9BC /* Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YUGPUImageHighPassSkinSmoothingDemo/Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9DDA749B1C54E44B0027D7FA /* YUGPUImageHighPassSkinSmoothingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUGPUImageHighPassSkinSmoothingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDA749E1C54E44B0027D7FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DDA74A01C54E44B0027D7FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +24,8 @@
 		9DDA74A51C54E44B0027D7FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DDA74A81C54E44B0027D7FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DDA74AA1C54E44B0027D7FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA3AB97550D9C929219BFBB8 /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUGPUImageHighPassSkinSmoothingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4ED340CFC8C9E930AB6B612 /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUGPUImageHighPassSkinSmoothingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC01B79E565295EE793B2B03 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YUGPUImageHighPassSkinSmoothingDemo/Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,20 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEA21041DE8872538399C5DD /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework in Frameworks */,
+				3C497400C75AD14EA08B8A74 /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4899A84F60921CD2FF542D02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4ED340CFC8C9E930AB6B612 /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9DDA74921C54E44B0027D7FA = {
 			isa = PBXGroup;
 			children = (
 				9DDA749D1C54E44B0027D7FA /* YUGPUImageHighPassSkinSmoothingDemo */,
 				9DDA749C1C54E44B0027D7FA /* Products */,
-				CB6447AE0F677234FD060F75 /* Pods */,
-				EE913D0E521EEE4C1069BBC6 /* Frameworks */,
+				AA9EC127F340A0AA16F9DEF7 /* Pods */,
+				4899A84F60921CD2FF542D02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,21 +79,13 @@
 			path = YUGPUImageHighPassSkinSmoothingDemo;
 			sourceTree = "<group>";
 		};
-		CB6447AE0F677234FD060F75 /* Pods */ = {
+		AA9EC127F340A0AA16F9DEF7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9A39E6200FA8F40DC5093E42 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig */,
-				24731384373DCD14452CE5C4 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig */,
+				4C031F7E02FD9985F232E9BC /* Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig */,
+				EC01B79E565295EE793B2B03 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		EE913D0E521EEE4C1069BBC6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AA3AB97550D9C929219BFBB8 /* Pods_YUGPUImageHighPassSkinSmoothingDemo.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,12 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DDA74AD1C54E44B0027D7FA /* Build configuration list for PBXNativeTarget "YUGPUImageHighPassSkinSmoothingDemo" */;
 			buildPhases = (
-				4A217A17994282BF2EAEC37F /* Check Pods Manifest.lock */,
+				C6B00AFCCDABF920DB0652E0 /* Check Pods Manifest.lock */,
 				9DDA74971C54E44B0027D7FA /* Sources */,
 				9DDA74981C54E44B0027D7FA /* Frameworks */,
 				9DDA74991C54E44B0027D7FA /* Resources */,
-				3BD9C2F6992148FC70877C92 /* Embed Pods Frameworks */,
-				5978D6A5AF62152B2DD73E10 /* Copy Pods Resources */,
+				19AF4E8C0161F8863F4BFC31 /* Embed Pods Frameworks */,
+				EB5B571F543C8096499EECA6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,7 +158,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3BD9C2F6992148FC70877C92 /* Embed Pods Frameworks */ = {
+		19AF4E8C0161F8863F4BFC31 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,7 +173,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YUGPUImageHighPassSkinSmoothingDemo/Pods-YUGPUImageHighPassSkinSmoothingDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4A217A17994282BF2EAEC37F /* Check Pods Manifest.lock */ = {
+		C6B00AFCCDABF920DB0652E0 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -188,7 +188,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5978D6A5AF62152B2DD73E10 /* Copy Pods Resources */ = {
+		EB5B571F543C8096499EECA6 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,7 +322,7 @@
 		};
 		9DDA74AE1C54E44B0027D7FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A39E6200FA8F40DC5093E42 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig */;
+			baseConfigurationReference = 4C031F7E02FD9985F232E9BC /* Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YUGPUImageHighPassSkinSmoothingDemo/Info.plist;
@@ -334,7 +334,7 @@
 		};
 		9DDA74AF1C54E44B0027D7FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24731384373DCD14452CE5C4 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig */;
+			baseConfigurationReference = EC01B79E565295EE793B2B03 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YUGPUImageHighPassSkinSmoothingDemo/Info.plist;

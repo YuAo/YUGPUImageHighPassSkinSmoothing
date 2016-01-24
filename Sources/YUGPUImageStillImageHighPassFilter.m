@@ -7,13 +7,14 @@
 //
 
 #import "YUGPUImageStillImageHighPassFilter.h"
+#import "YUGPUImageDefines.h"
 
 NSString * const YUGPUImageStillImageHighPassFilterFragmentShaderString =
 SHADER_STRING
 (
- precision lowp float;
- varying highp vec2 textureCoordinate;
- varying highp vec2 textureCoordinate2;
+ YU_GLSL_FLOAT_PRECISION_LOW
+ varying YU_GLSL_PRECISION_HIGH vec2 textureCoordinate;
+ varying YU_GLSL_PRECISION_HIGH vec2 textureCoordinate2;
  
  uniform sampler2D inputImageTexture;
  uniform sampler2D inputImageTexture2;

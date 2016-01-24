@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A7B7838D7A669C6D30050FF7'
+               BlueprintIdentifier = 'EFC5E2306C0D46B57F892584'
                BlueprintName = 'YUGPUImageHighPassSkinSmoothing'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'YUGPUImageHighPassSkinSmoothing.framework'>

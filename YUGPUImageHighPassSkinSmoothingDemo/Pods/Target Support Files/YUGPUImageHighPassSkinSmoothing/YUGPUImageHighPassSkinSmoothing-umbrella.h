@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+#import "YUGPUImageDefines.h"
 #import "YUGPUImageHighPassSkinSmoothingFilter.h"
 #import "YUGPUImageStillImageHighPassFilter.h"
 

@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, YUGPUImageHighPassSkinSmoothingRadiusUnit) {
 
 @property (nonatomic) CGFloat amount;
 
-@property (nonatomic,copy) NSArray<NSValue *> *controlPoints; //value of CGPoint
+@property (nonatomic,copy) NSArray<NSValue *> *controlPoints; //value of Point
 
 @property (nonatomic,copy) YUGPUImageHighPassSkinSmoothingRadius *radius;
 

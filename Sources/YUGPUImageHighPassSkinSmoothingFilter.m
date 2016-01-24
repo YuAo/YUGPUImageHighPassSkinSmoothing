@@ -7,13 +7,14 @@
 
 #import "YUGPUImageHighPassSkinSmoothingFilter.h"
 #import "YUGPUImageStillImageHighPassFilter.h"
+#import "YUGPUImageDefines.h"
 #import <GPUImage/GPUImageThreeInputFilter.h>
 
 NSString * const YUGPUImageDermabrasionhHardLightFilterFragmentShaderString =
 SHADER_STRING
 (
- precision lowp float;
- varying highp vec2 textureCoordinate;
+ YU_GLSL_FLOAT_PRECISION_LOW
+ varying YU_GLSL_PRECISION_HIGH vec2 textureCoordinate;
  uniform sampler2D inputImageTexture;
  
  void main() {
@@ -43,8 +44,8 @@ SHADER_STRING
 NSString * const YUGPUImageDermabrasionChannelOverlayFragmentShaderString =
 SHADER_STRING
 (
- precision lowp float;
- varying highp vec2 textureCoordinate;
+ YU_GLSL_FLOAT_PRECISION_LOW
+ varying YU_GLSL_PRECISION_HIGH vec2 textureCoordinate;
  uniform sampler2D inputImageTexture;
  
  void main() {
@@ -146,10 +147,10 @@ SHADER_STRING
 NSString * const YUGPUImageHighpassDermabrasionComposeFilterFragmentShaderString =
 SHADER_STRING
 (
- precision lowp float;
- varying highp vec2 textureCoordinate;
- varying highp vec2 textureCoordinate2;
- varying highp vec2 textureCoordinate3;
+ YU_GLSL_FLOAT_PRECISION_LOW
+ varying YU_GLSL_PRECISION_HIGH vec2 textureCoordinate;
+ varying YU_GLSL_PRECISION_HIGH vec2 textureCoordinate2;
+ varying YU_GLSL_PRECISION_HIGH vec2 textureCoordinate3;
  
  uniform sampler2D inputImageTexture;
  uniform sampler2D inputImageTexture2;
@@ -217,9 +218,20 @@ SHADER_STRING
         //set defaults
         self.amount = 0.75;
         self.radius = [YUGPUImageHighPassSkinSmoothingRadius radiusAsFractionOfImageWidth:4.5/750.0];
-        self.controlPoints = @[[NSValue valueWithCGPoint:CGPointMake(0, 0)],
-                               [NSValue valueWithCGPoint:CGPointMake(120/255.0, 146/255.0)],
-                               [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)]];
+        
+        CGPoint controlPoint0 = CGPointMake(0, 0);
+        CGPoint controlPoint1 = CGPointMake(120/255.0, 146/255.0);
+        CGPoint controlPoint2 = CGPointMake(1.0, 1.0);
+        
+#if TARGET_OS_IOS
+        self.controlPoints = @[[NSValue valueWithCGPoint:controlPoint0],
+                               [NSValue valueWithCGPoint:controlPoint1],
+                               [NSValue valueWithCGPoint:controlPoint2]];
+#else
+        self.controlPoints = @[[NSValue valueWithPoint:controlPoint0],
+                               [NSValue valueWithPoint:controlPoint1],
+                               [NSValue valueWithPoint:controlPoint2]];
+#endif
     }
     return self;
 }

@@ -1,0 +1,6 @@
+framework module Pods_YUGPUImageHighPassSkinSmoothingDemo {
+  umbrella header "Pods-YUGPUImageHighPassSkinSmoothingDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

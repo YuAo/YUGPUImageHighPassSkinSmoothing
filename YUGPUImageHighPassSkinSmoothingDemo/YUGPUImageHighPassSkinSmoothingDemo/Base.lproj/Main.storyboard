@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YUGPUImageHighPassSkinSmoothingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gWz-iP-vFh">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="b7S-el-fjw" appends="YES" id="RaN-3o-z3Q"/>
+                                </connections>
+                            </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xE3-n3-1Ue">
+                                <rect key="frame" x="222" y="532" width="156" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long press to compare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEa-nt-eJp">
+                                        <rect key="frame" x="8" y="4" width="140" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gEa-nt-eJp" secondAttribute="trailing" constant="8" id="8wM-HP-jA8"/>
+                                    <constraint firstAttribute="bottom" secondItem="gEa-nt-eJp" secondAttribute="bottom" constant="4" id="FiV-4A-Hun"/>
+                                    <constraint firstItem="gEa-nt-eJp" firstAttribute="top" secondItem="xE3-n3-1Ue" secondAttribute="top" constant="4" id="Prf-Ra-Dd4"/>
+                                    <constraint firstItem="gEa-nt-eJp" firstAttribute="leading" secondItem="xE3-n3-1Ue" secondAttribute="leading" constant="8" id="XRS-jd-GSc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gWz-iP-vFh" secondAttribute="trailing" id="0NX-RY-FXk"/>
+                            <constraint firstItem="xE3-n3-1Ue" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Wr-FB-5Fb"/>
+                            <constraint firstItem="gWz-iP-vFh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IDl-Ra-GYc"/>
+                            <constraint firstItem="gWz-iP-vFh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="O49-CC-bdD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gWz-iP-vFh" secondAttribute="bottom" id="UvB-Vf-94Z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xE3-n3-1Ue" secondAttribute="bottom" constant="44" id="XE8-op-XjH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="gWz-iP-vFh" id="V7n-hI-xNF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="b7S-el-fjw" userLabel="Image View Long Press Gesture Recognizer">
+                    <connections>
+                        <action selector="handleImageViewLongPress:" destination="BYZ-38-t0r" id="uYY-hE-Nec"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>

@@ -20,7 +20,7 @@ SHADER_STRING
      vec3 final = texture2D(inputImageTexture,textureCoordinate).rgb;
      
      float ba = 0.0;
-     lowp vec4 hardLightColor = vec4(vec3(final.b), 1.0);
+     vec4 hardLightColor = vec4(vec3(final.b), 1.0);
      for (int i =0; i < 3; i++)
      {
          if (hardLightColor.b < 0.5) {

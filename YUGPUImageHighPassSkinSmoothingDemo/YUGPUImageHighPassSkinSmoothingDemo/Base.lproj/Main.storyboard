@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8yX-8v-Ecg">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gWz-iP-vFh">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <gestureRecognizers/>
@@ -51,10 +54,12 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gWz-iP-vFh" secondAttribute="trailing" id="0NX-RY-FXk"/>
                             <constraint firstItem="xE3-n3-1Ue" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Wr-FB-5Fb"/>
+                            <constraint firstItem="8yX-8v-Ecg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hlk-Bb-gLy"/>
                             <constraint firstItem="gWz-iP-vFh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IDl-Ra-GYc"/>
                             <constraint firstItem="gWz-iP-vFh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="O49-CC-bdD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gWz-iP-vFh" secondAttribute="bottom" id="UvB-Vf-94Z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xE3-n3-1Ue" secondAttribute="bottom" constant="44" id="XE8-op-XjH"/>
+                            <constraint firstItem="8yX-8v-Ecg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ucM-KZ-g0n"/>
                         </constraints>
                     </view>
                     <connections>

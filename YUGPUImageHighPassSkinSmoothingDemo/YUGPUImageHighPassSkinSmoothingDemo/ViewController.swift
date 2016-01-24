@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     var sourceImage = UIImage(named: "SampleImage.jpg")!
     var processedImage: UIImage!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         let filter  = YUGPUImageHighPassSkinSmoothingFilter()
         filter.amount = 0.7

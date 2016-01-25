@@ -10,7 +10,7 @@ See the `Core Image` implementation [YUCIHighPassSkinSmoothing](https://github.c
 
 The API should be self-explaining.
 
-If you are not familiar with `GPUImage`, use the core image implementation.
+If you are not familiar with `GPUImage`, read the documentation [here](https://github.com/BradLarson/GPUImage) or use the [core image implementation](https://github.com/YuAo/YUCIHighPassSkinSmoothing).
 
 ##Installation
 

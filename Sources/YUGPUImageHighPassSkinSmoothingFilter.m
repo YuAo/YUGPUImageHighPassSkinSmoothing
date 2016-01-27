@@ -10,7 +10,7 @@
 #import "YUGPUImageDefines.h"
 #import <GPUImage/GPUImageThreeInputFilter.h>
 
-NSString * const YUGPUImageDermabrasionhHardLightFilterFragmentShaderString =
+NSString * const YUCIHighPassSkinSmoothingMaskBoostFilterFragmentShaderString =
 SHADER_STRING
 (
  YU_GLSL_FLOAT_PRECISION_LOW
@@ -41,7 +41,7 @@ SHADER_STRING
  }
 );
 
-NSString * const YUGPUImageDermabrasionChannelOverlayFragmentShaderString =
+NSString * const YUGPUImageGreenAndBlueChannelOverlayFragmentShaderString =
 SHADER_STRING
 (
  YU_GLSL_FLOAT_PRECISION_LOW
@@ -57,7 +57,7 @@ SHADER_STRING
  }
 );
 
-@interface YUGPUImageHighpassDermabrasionRangeSelectionFilter : GPUImageFilterGroup
+@interface YUCIHighPassSkinSmoothingMaskGenerator : GPUImageFilterGroup
 
 @property (nonatomic) CGFloat highPassRadiusInPixels;
 
@@ -65,25 +65,25 @@ SHADER_STRING
 
 @end
 
-@implementation YUGPUImageHighpassDermabrasionRangeSelectionFilter
+@implementation YUCIHighPassSkinSmoothingMaskGenerator
 
 - (instancetype)init {
     if (self = [super init]) {
-        GPUImageFilter *channelOverlayFilter = [[GPUImageFilter alloc] initWithFragmentShaderFromString:YUGPUImageDermabrasionChannelOverlayFragmentShaderString];
+        GPUImageFilter *channelOverlayFilter = [[GPUImageFilter alloc] initWithFragmentShaderFromString:YUGPUImageGreenAndBlueChannelOverlayFragmentShaderString];
         [self addFilter:channelOverlayFilter];
         
         YUGPUImageStillImageHighPassFilter *highpassFilter = [[YUGPUImageStillImageHighPassFilter alloc] init];
         [self addFilter:highpassFilter];
         self.highPassFilter = highpassFilter;
         
-        GPUImageFilter *hardLightFilter = [[GPUImageFilter alloc] initWithFragmentShaderFromString:YUGPUImageDermabrasionhHardLightFilterFragmentShaderString];
-        [self addFilter:hardLightFilter];
+        GPUImageFilter *maskBoostFilter = [[GPUImageFilter alloc] initWithFragmentShaderFromString:YUCIHighPassSkinSmoothingMaskBoostFilterFragmentShaderString];
+        [self addFilter:maskBoostFilter];
         
         [channelOverlayFilter addTarget:highpassFilter];
-        [highpassFilter addTarget:hardLightFilter];
+        [highpassFilter addTarget:maskBoostFilter];
         
         self.initialFilters = @[channelOverlayFilter];
-        self.terminalFilter = hardLightFilter;
+        self.terminalFilter = maskBoostFilter;
     }
     return self;
 }
@@ -144,7 +144,7 @@ SHADER_STRING
 
 @end
 
-NSString * const YUGPUImageHighpassDermabrasionComposeFilterFragmentShaderString =
+NSString * const YUGPUImageHighpassSkinSmoothingCompositingFilterFragmentShaderString =
 SHADER_STRING
 (
  YU_GLSL_FLOAT_PRECISION_LOW
@@ -166,7 +166,7 @@ SHADER_STRING
 
 @interface YUGPUImageHighPassSkinSmoothingFilter ()
 
-@property (nonatomic,weak) YUGPUImageHighpassDermabrasionRangeSelectionFilter *dermabrasionRangeSelectionFilter;
+@property (nonatomic,weak) YUCIHighPassSkinSmoothingMaskGenerator *maskGenerator;
 
 @property (nonatomic,weak) GPUImageDissolveBlendFilter *dissolveFilter;
 
@@ -186,10 +186,10 @@ SHADER_STRING
         exposureFilter.exposure = -1.0;
         [self addFilter:exposureFilter];
         
-        YUGPUImageHighpassDermabrasionRangeSelectionFilter *rangeSelectionFilter = [[YUGPUImageHighpassDermabrasionRangeSelectionFilter alloc] init];
-        [self addFilter:rangeSelectionFilter];
-        self.dermabrasionRangeSelectionFilter = rangeSelectionFilter;
-        [exposureFilter addTarget:rangeSelectionFilter];
+        YUCIHighPassSkinSmoothingMaskGenerator *maskGenerator = [[YUCIHighPassSkinSmoothingMaskGenerator alloc] init];
+        [self addFilter:maskGenerator];
+        self.maskGenerator = maskGenerator;
+        [exposureFilter addTarget:maskGenerator];
         
         GPUImageToneCurveFilter *skinToneCurveFilter = [[GPUImageToneCurveFilter alloc] init];
         [self addFilter:skinToneCurveFilter];
@@ -201,10 +201,10 @@ SHADER_STRING
         
         [skinToneCurveFilter addTarget:dissolveFilter atTextureLocation:1];
         
-        GPUImageThreeInputFilter *composeFilter = [[GPUImageThreeInputFilter alloc] initWithFragmentShaderFromString:YUGPUImageHighpassDermabrasionComposeFilterFragmentShaderString];
+        GPUImageThreeInputFilter *composeFilter = [[GPUImageThreeInputFilter alloc] initWithFragmentShaderFromString:YUGPUImageHighpassSkinSmoothingCompositingFilterFragmentShaderString];
         [self addFilter:composeFilter];
         
-        [rangeSelectionFilter addTarget:composeFilter atTextureLocation:2];
+        [maskGenerator addTarget:composeFilter atTextureLocation:2];
         [self.dissolveFilter addTarget:composeFilter atTextureLocation:1];
         
         GPUImageSharpenFilter *sharpen = [[GPUImageSharpenFilter alloc] init];
@@ -256,8 +256,8 @@ SHADER_STRING
             default:
                 break;
         }
-        if (radiusInPixels != self.dermabrasionRangeSelectionFilter.highPassRadiusInPixels) {
-            self.dermabrasionRangeSelectionFilter.highPassRadiusInPixels = radiusInPixels;
+        if (radiusInPixels != self.maskGenerator.highPassRadiusInPixels) {
+            self.maskGenerator.highPassRadiusInPixels = radiusInPixels;
         }
     }
 }

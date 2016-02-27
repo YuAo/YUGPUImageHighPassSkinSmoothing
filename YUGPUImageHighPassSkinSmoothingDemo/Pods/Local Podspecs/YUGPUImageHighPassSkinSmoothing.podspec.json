@@ -20,7 +20,6 @@
     "osx": "10.10"
   },
   "source_files": "Sources/**/*.{h,m}",
-  "resources": "Sources/**/*.{png,cikernel}",
   "dependencies": {
     "GPUImage": [
 

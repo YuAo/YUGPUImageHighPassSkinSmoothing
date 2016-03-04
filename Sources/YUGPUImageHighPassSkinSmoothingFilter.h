@@ -32,4 +32,6 @@ typedef NS_ENUM(NSInteger, YUGPUImageHighPassSkinSmoothingRadiusUnit) {
 
 @property (nonatomic,copy) YUGPUImageHighPassSkinSmoothingRadius *radius;
 
+@property (nonatomic) CGFloat sharpnessFactor;
+
 @end

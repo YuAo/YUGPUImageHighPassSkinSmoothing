@@ -18,26 +18,22 @@ SHADER_STRING
  uniform sampler2D inputImageTexture;
  
  void main() {
-     vec3 final = texture2D(inputImageTexture,textureCoordinate).rgb;
+     vec4 color = texture2D(inputImageTexture,textureCoordinate);
      
-     float ba = 0.0;
-     vec4 hardLightColor = vec4(vec3(final.b), 1.0);
-     for (int i =0; i < 3; i++)
+     float hardLightColor = color.b;
+     for (int i = 0; i < 3; ++i)
      {
-         if (hardLightColor.b < 0.5) {
-             ba = hardLightColor.b  * hardLightColor.b * 2.;
+         if (hardLightColor < 0.5) {
+             hardLightColor = hardLightColor  * hardLightColor * 2.;
          } else {
-             ba = 1. - (1. - hardLightColor.b) * (1. - hardLightColor.b) * 2.;
+             hardLightColor = 1. - (1. - hardLightColor) * (1. - hardLightColor) * 2.;
          }
-         hardLightColor = vec4(vec3(ba), 1.0);
      }
      
      float k = 255.0 / (164.0 - 75.0);
-     hardLightColor.r = (hardLightColor.r - 75.0 / 255.0) * k;
-     hardLightColor.g = (hardLightColor.g - 75.0 / 255.0) * k;
-     hardLightColor.b = (hardLightColor.b - 75.0 / 255.0) * k;
+     hardLightColor = (hardLightColor - 75.0 / 255.0) * k;
      
-     gl_FragColor = hardLightColor;
+     gl_FragColor = vec4(vec3(hardLightColor),color.a);
  }
 );
 
@@ -53,7 +49,7 @@ SHADER_STRING
      vec4 base = vec4(image.g,image.g,image.g,1.0);
      vec4 overlay = vec4(image.b,image.b,image.b,1.0);
      float ba = 2.0 * overlay.b * base.b + overlay.b * (1.0 - base.a) + base.b * (1.0 - overlay.a);
-     gl_FragColor = vec4(ba,ba,ba,1.0);
+     gl_FragColor = vec4(ba,ba,ba,image.a);
  }
 );
 
@@ -218,6 +214,7 @@ SHADER_STRING
         //set defaults
         self.amount = 0.75;
         self.radius = [YUGPUImageHighPassSkinSmoothingRadius radiusAsFractionOfImageWidth:4.5/750.0];
+        self.sharpnessFactor = 0.4;
         
         CGPoint controlPoint0 = CGPointMake(0, 0);
         CGPoint controlPoint1 = CGPointMake(120/255.0, 146/255.0);
@@ -277,8 +274,13 @@ SHADER_STRING
 
 - (void)setAmount:(CGFloat)amount {
     _amount = amount;
-    self.sharpenFilter.sharpness = 0.5 * amount;
     self.dissolveFilter.mix = amount;
+    self.sharpenFilter.sharpness = self.sharpnessFactor * amount;
+}
+
+- (void)setSharpnessFactor:(CGFloat)sharpnessFactor {
+    _sharpnessFactor = sharpnessFactor;
+    self.sharpenFilter.sharpness = sharpnessFactor * self.amount;
 }
 
 @end

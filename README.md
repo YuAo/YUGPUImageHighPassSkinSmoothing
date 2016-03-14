@@ -1,5 +1,9 @@
 # YUGPUImageHighPassSkinSmoothing
 
+![CocoaPods Platform](https://img.shields.io/cocoapods/p/YUGPUImageHighPassSkinSmoothing.svg?style=flat-square)
+![CocoaPods Version](https://img.shields.io/cocoapods/v/YUGPUImageHighPassSkinSmoothing.svg?style=flat-square)
+![CocoaPods License](https://img.shields.io/cocoapods/l/YUGPUImageHighPassSkinSmoothing.svg?style=flat-square)
+
 An implementation of High Pass Skin Smoothing using [GPUImage](https://github.com/BradLarson/GPUImage).
 
 ##Previews, Concepts

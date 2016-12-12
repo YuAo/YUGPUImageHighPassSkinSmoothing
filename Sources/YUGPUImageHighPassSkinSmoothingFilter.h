@@ -5,7 +5,7 @@
 //
 //
 
-#import <GPUImage/GPUImage.h>
+@import GPUImage;
 
 typedef NS_ENUM(NSInteger, YUGPUImageHighPassSkinSmoothingRadiusUnit) {
     YUGPUImageHighPassSkinSmoothingRadiusUnitPixel = 1,

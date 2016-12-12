@@ -16,19 +16,19 @@ class ViewController: UIViewController {
     var sourceImage = UIImage(named: "SampleImage.jpg")!
     var processedImage: UIImage!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         let filter  = YUGPUImageHighPassSkinSmoothingFilter()
         filter.amount = 0.7
-        self.processedImage = filter.imageByFilteringImage(self.sourceImage)
+        self.processedImage = filter.image(byFilteringImage: self.sourceImage)
         self.imageView.image = self.processedImage
     }
     
-    @IBAction func handleImageViewLongPress(sender: UILongPressGestureRecognizer) {
-        if sender.state == .Began {
+    @IBAction func handleImageViewLongPress(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
             self.imageView.image = self.sourceImage
-        } else if (sender.state == .Ended || sender.state == .Cancelled) {
+        } else if (sender.state == .ended || sender.state == .cancelled) {
             self.imageView.image = self.processedImage
         }
     }

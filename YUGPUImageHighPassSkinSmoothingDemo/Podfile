@@ -1,8 +1,10 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'YUGPUImageHighPassSkinSmoothingDemo' do
 
+target 'YUGPUImageHighPassSkinSmoothingDemo' do
+    
+pod 'GPUImage', :git => 'https://github.com/BradLarson/GPUImage.git'
 pod 'YUGPUImageHighPassSkinSmoothing', :path => '../'
 
 end

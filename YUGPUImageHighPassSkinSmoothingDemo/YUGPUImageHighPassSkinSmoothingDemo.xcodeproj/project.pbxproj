@@ -95,12 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DDA74AD1C54E44B0027D7FA /* Build configuration list for PBXNativeTarget "YUGPUImageHighPassSkinSmoothingDemo" */;
 			buildPhases = (
-				C6B00AFCCDABF920DB0652E0 /* Check Pods Manifest.lock */,
+				C6B00AFCCDABF920DB0652E0 /* [CP] Check Pods Manifest.lock */,
 				9DDA74971C54E44B0027D7FA /* Sources */,
 				9DDA74981C54E44B0027D7FA /* Frameworks */,
 				9DDA74991C54E44B0027D7FA /* Resources */,
-				19AF4E8C0161F8863F4BFC31 /* Embed Pods Frameworks */,
-				EB5B571F543C8096499EECA6 /* Copy Pods Resources */,
+				19AF4E8C0161F8863F4BFC31 /* [CP] Embed Pods Frameworks */,
+				EB5B571F543C8096499EECA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +123,7 @@
 				TargetAttributes = {
 					9DDA749A1C54E44B0027D7FA = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -158,14 +159,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19AF4E8C0161F8863F4BFC31 /* Embed Pods Frameworks */ = {
+		19AF4E8C0161F8863F4BFC31 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,29 +174,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YUGPUImageHighPassSkinSmoothingDemo/Pods-YUGPUImageHighPassSkinSmoothingDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C6B00AFCCDABF920DB0652E0 /* Check Pods Manifest.lock */ = {
+		C6B00AFCCDABF920DB0652E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		EB5B571F543C8096499EECA6 /* Copy Pods Resources */ = {
+		EB5B571F543C8096499EECA6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,10 +326,12 @@
 			baseConfigurationReference = 4C031F7E02FD9985F232E9BC /* Pods-YUGPUImageHighPassSkinSmoothingDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YUGPUImageHighPassSkinSmoothingDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.imyuao.YUGPUImageHighPassSkinSmoothingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -337,10 +340,12 @@
 			baseConfigurationReference = EC01B79E565295EE793B2B03 /* Pods-YUGPUImageHighPassSkinSmoothingDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YUGPUImageHighPassSkinSmoothingDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.imyuao.YUGPUImageHighPassSkinSmoothingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

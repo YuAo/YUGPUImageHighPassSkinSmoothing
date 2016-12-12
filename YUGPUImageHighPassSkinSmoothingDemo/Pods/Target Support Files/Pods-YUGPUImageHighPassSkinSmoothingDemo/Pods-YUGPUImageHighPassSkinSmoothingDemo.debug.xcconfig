@@ -1,7 +1,10 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
 CLANG_MODULES_AUTOLINK = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/GPUImage" "$PODS_CONFIGURATION_BUILD_DIR/YUGPUImageHighPassSkinSmoothing"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/GPUImage.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/YUGPUImageHighPassSkinSmoothing.framework/Headers"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/GPUImage/GPUImage.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/YUGPUImageHighPassSkinSmoothing/YUGPUImageHighPassSkinSmoothing.framework/Headers"
 OTHER_LDFLAGS = $(inherited) -framework "GPUImage" -framework "YUGPUImageHighPassSkinSmoothing"
-PODS_FRAMEWORK_BUILD_PATH = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-YUGPUImageHighPassSkinSmoothingDemo"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

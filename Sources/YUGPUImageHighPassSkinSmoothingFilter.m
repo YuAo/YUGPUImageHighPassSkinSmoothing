@@ -8,7 +8,6 @@
 #import "YUGPUImageHighPassSkinSmoothingFilter.h"
 #import "YUGPUImageStillImageHighPassFilter.h"
 #import "YUGPUImageDefines.h"
-#import <GPUImage/GPUImageThreeInputFilter.h>
 
 NSString * const YUCIHighPassSkinSmoothingMaskBoostFilterFragmentShaderString =
 SHADER_STRING
